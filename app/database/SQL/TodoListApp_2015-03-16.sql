@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.5.38)
 # Database: TodoListApp
-# Generation Time: 2015-03-14 16:04:47 +0000
+# Generation Time: 2015-03-16 15:49:56 +0000
 # ************************************************************
 
 
@@ -22,8 +22,6 @@
 
 # Dump of table tasks
 # ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `tasks`;
 
 CREATE TABLE `tasks` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -40,23 +38,22 @@ CREATE TABLE `tasks` (
 # Dump of table users
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `users`;
-
 CREATE TABLE `users` (
   `id` mediumint(11) unsigned NOT NULL AUTO_INCREMENT,
-  `givenname` varchar(50) DEFAULT NULL,
+  `givenname` varchar(50) DEFAULT 'User',
   `surname` varchar(50) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `password` varchar(100) DEFAULT NULL,
+  `email` varchar(50) NOT NULL DEFAULT '',
+  `password` varchar(60) NOT NULL DEFAULT '',
   `password_temp` varchar(100) DEFAULT NULL,
   `resetcode` varchar(100) DEFAULT NULL,
-  `isActive` tinyint(1) DEFAULT NULL,
+  `isActive` tinyint(1) DEFAULT '1',
   `isDel` tinyint(1) DEFAULT NULL,
   `last_login` timestamp NULL DEFAULT NULL,
-  `reminder_token` varchar(75) DEFAULT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
