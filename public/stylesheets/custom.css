@@ -1,0 +1,38 @@
+/* line 7, ../scss/custom.scss */
+body {
+  background-color: #E5E5E5;
+}
+
+/* line 11, ../scss/custom.scss */
+p {
+  margin: 0;
+}
+
+/* line 18, ../scss/custom.scss */
+.form img {
+  display: block;
+  margin: 15px auto;
+  /* The critical part is the display: block and the margin auto on the left and right of the element */
+}
+
+/* line 29, ../scss/custom.scss */
+.task {
+  display: flex;
+  /* equal height of the children */
+  justify-content: center;
+  padding: 0;
+}
+
+/* line 37, ../scss/custom.scss */
+.container-card {
+  background-color: #FFF;
+  padding: 2em;
+}
+
+/* line 42, ../scss/custom.scss */
+.panel {
+  border: 1px solid #FFF;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}

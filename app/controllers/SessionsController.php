@@ -29,9 +29,9 @@ class SessionsController extends \BaseController {
 			'password' => $input['password']
 			]);
 
-		if ($attempt) return Redirect::intended('/')->with('flash_message', 'You have been logged in!')->with('flash_message_color', 'alert-success');
+		if ($attempt) return Redirect::intended('/')->with('flash_message', 'You have been logged in!')->with('flash_message_color', 'success');
 
-		return Redirect::back()->with('flash_message', 'Invalid credentials!')->withInput()->with('flash_message_color', 'alert-danger');
+		return Redirect::back()->with('flash_message', 'Invalid credentials!')->withInput()->with('flash_message_color', 'alert');
 	}
 
 
@@ -59,7 +59,7 @@ class SessionsController extends \BaseController {
 	public function destroy()
 	{
 		Auth::logout();
-		return Redirect::intended('login')->with('flash_message', 'You have been logged out!')->with('flash_message_color', 'alert-info');
+		return Redirect::intended('login')->with('flash_message', 'You have been logged out!')->with('flash_message_color', 'secondary');
 	}
 
 

@@ -1,0 +1,56 @@
+/* line 6, ../scss/checkbox.scss */
+.checkbox {
+  position: relative;
+  top: rem(-6);
+  margin: 0 1rem 0 0;
+  cursor: pointer;
+}
+/* line 14, ../scss/checkbox.scss */
+.checkbox:before {
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  width: 1rem;
+  height: 1rem;
+  border: 3px solid rgba(229, 229, 229, 0);
+}
+/* line 29, ../scss/checkbox.scss */
+.checkbox:checked:before {
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  height: .4rem;
+  border-color: #06B294;
+  border-top-style: none;
+  border-right-style: none;
+}
+/* line 40, ../scss/checkbox.scss */
+.checkbox:after {
+  content: "";
+  position: absolute;
+  top: rem(-2);
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  background: #E5E5E5;
+  border-radius: 3px;
+  cursor: pointer;
+}
+/* line 55, ../scss/checkbox.scss */
+.checkbox:after {
+  content: "";
+  position: absolute;
+  top: rem(-2);
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  background: #E5E5E5;
+  border-radius: 3px;
+  cursor: pointer;
+}
