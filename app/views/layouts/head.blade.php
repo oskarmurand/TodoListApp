@@ -17,6 +17,8 @@
   <script src="bower_components/foundation/js/foundation/foundation.js"></script>
   <script src="bower_components/foundation/js/foundation/foundation.accordion.js"></script>
   <script src="bower_components/foundation/js/foundation/foundation.reveal.js"></script>
+  <script src="bower_components/foundation/js/foundation/foundation.alert.js"></script>
+  <script src="bower_components/foundation/js/foundation/foundation.topbar.js"></script>
 
 
 

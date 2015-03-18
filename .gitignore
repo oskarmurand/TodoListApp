@@ -41,3 +41,6 @@ Thumbs.db
 /vendor
 /node_modules
 .env
+
+.sass-cache
+/.sass-cache
