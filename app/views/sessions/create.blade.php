@@ -2,28 +2,31 @@
 
 @section('content')
 
+<div class="small-12 medium-6 large-4 columns small-centered container-card">
 
-<div class="small-12 small-centered medium-6 large-4 columns">
 {{ Form::open(array('route' => 'sessions.store')) }}
 
 <div class="row">
 
-  <div class="small-12 columns border">
+  <div class="small-12  border">
     <img src="http://placehold.it/350x150/" alt="350x150" /> <!-- placeholder image -->
   </div>
 
-  <div class="small-12 columns">
-      {{ Form::text('email', null, ['class' => 'radiusl', 'required' => 'required', 'placeholder' => 'Email']) }}
+  <div class="small-12 ">
+      {{ Form::text('email', null, ['class' => 'radius email-input', 'required' => 'required', 'placeholder' => '&#09;Email']) }}
   </div> <!-- end email -->
-  <div class="small-12 columns">
-      {{ Form::password('password', ['class' => 'radius', 'required' => 'required', 'placeholder' => 'Password']) }}
+  <div class="small-12 ">
+      {{ Form::password('password', ['class' => 'radius pass-input', 'required' => 'required', 'placeholder' => '&#09;Password']) }}
   </div> <!-- end password -->
-  <div class="small-12 columns">
-      {{ Form::submit('Log In', ['class' => 'small radius button success small-12 columns']) }}
+  <div class="small-12 ">
+      {{ Form::submit('Log In', ['class' => 'small radius button small-12', 'placeholder' => 'Log in']) }}
   </div> <!-- end button -->
 
 </div> <!-- end row -->
 {{ Form::close() }} <!-- close form -->
-</div> <!-- end centering -->
+
+</div>
+
+
 
     @stop

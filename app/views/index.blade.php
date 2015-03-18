@@ -3,21 +3,21 @@
 @section('content')
 
 
-<div class="small-10 columns small-centered container-card">
+<div class="small-12 medium-10 large-8 columns small-centered container-card">
 
 		<!-- LOADING ICON -->
 		<!-- show loading icon if the loading variable is set to true -->
-		<p class="text-center" ng-show="loading"><span class="fa fa-meh-o fa-5x fa-spin"></span></p>
+		<p class="text-center" ng-show="loading"><span class="fa fa-spinner fa-pulse fa-5x"></span></p>
 
 
 		<div class="row" data-equalizer>
-			<div class="hide-for-small-only medium-2 columns more text-centered" data-equalizer-watch>
+			<div class="hide-for-small-only medium-2 columns  text-centered" data-equalizer-watch>
 				<p><strong>#</strong></p>
 			</div><!--end task-number (hides on phone screen) -->
-			<div class="small-10 medium-8 columns more text-left" data-equalizer-watch>
+			<div class="small-10 medium-8 columns text-left" data-equalizer-watch>
 				<p><strong>Title</strong></p>
 			</div> <!-- end task body -->
-			<div class="small-2 medium-2 columns more text-centered" data-equalizer-watch>
+			<div class="small-2 medium-2 columns text-centered" data-equalizer-watch>
 				<p><strong>Status</strong></p>
 			</div> <!-- end task actions -->
 		</div>
@@ -43,7 +43,7 @@
 							  <input type="text" name="task" ng-model="taskData.task" placeholder="Whats the next adventure?">
 							</div>
 							<span class="small-2 columns">
-							  <button type="submit" type="button" class="button success postfix">Go!</button>
+							  <button type="submit" type="button" class="button postfix">Go!</button>
 							</span>
 							</div>
 						</form>
@@ -58,16 +58,16 @@
 					<div id="addtask" class="content">
 						<form ng-submit="submittask()"> <!-- ng-submit will disable the default form action and use our function -->
 								<div class="row collapse">
-									<div class="small-10 columns">
+									<div class="small-10  columns">
 										<input type="text" name="task" ng-model="taskData.task" placeholder="Whats your next adventure?">
 									</div>
 									<span class="small-2 columns">
-										<button type="submit" type="button" class="button success postfix">Go!</button>
+										<button type="submit" type="button" class="button postfix">Go!</button>
 									</span>
 									</div>
 								</form>
 					</div>
-			    <a href="#addtask" class="small-4 small-centered columns text-center">Add Task</a>
+			    <a href="#addtask" class="small-12 medium-6 large-3 small-centered columns taskcordion text-center"><i class="fa fa-plus"></i> Add a new task</a>
 			  </li>
 			</ul>
 	  </div>

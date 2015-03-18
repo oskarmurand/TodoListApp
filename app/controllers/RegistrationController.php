@@ -44,7 +44,7 @@ class RegistrationController extends \BaseController {
 	public function store()
 	{
 
-		$user = UserModel::create(Input::only('email', 'password'));
+		$user = UserModel::create(Input::only('givenname', 'lastname', 'email', 'password'));
 
 		Auth::login($user);
 
