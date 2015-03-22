@@ -1,6 +1,6 @@
 angular.module('mainCtrl', [])
 
-	.controller('mainController', function($scope, $http, task) {
+	.controller('mainController', function($scope, $http, task, $timeout) {
 		// object to hold all the data for the new task form
 		$scope.taskData = {};
 
@@ -36,9 +36,16 @@ angular.module('mainCtrl', [])
 				});
 		};
 
+
 		// function to handle deleting a task
 		$scope.deletetask = function(id) {
-			$scope.loading = true;
+			$scope.loading = false;
+			$timeout(function() {
+					$scope.loading = true;
+			}, 300);
+			$timeout(function() {
+					$scope.loading = false;
+			}, 600);
 
 			task.destroy(id)
 				.success(function(data) {

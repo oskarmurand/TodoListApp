@@ -24,6 +24,12 @@
 
   <!-- Content -->
   @yield('content')
-  <script>$(document).foundation();</script>
 </body>
+  <script>
+  $(document).foundation();
+
+  $("button.close").click(function(){
+    $('.close.button.radius.small-12').foundation('reveal', 'close');
+  });
+  </script>
 </html>

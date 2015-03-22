@@ -9,7 +9,7 @@
 <div class="row">
 
   <div class="small-12  border">
-    <img src="http://placehold.it/350x150/" alt="350x150" /> <!-- placeholder image -->
+    <img src="images/logo.gif" alt="155x155" /> <!-- placeholder image -->
   </div>
 
   <div class="small-12 ">

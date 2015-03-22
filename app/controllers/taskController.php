@@ -20,12 +20,13 @@ class taskController extends \BaseController {
 	public function store()
 	{
 		task::create(array(
-			/*'author' => Input::get('author'),*/
-			'task' => Input::get('task')
+			'task' => Input::get('task'),
+			'description' => Input::get('description')
 		));
 
 		return Response::json(array('success' => true));
 	}
+
 
 	/**
 	 * Return the specified resource using JSON
@@ -47,8 +48,9 @@ class taskController extends \BaseController {
 	public function destroy($id)
 	{
 		task::destroy($id);
-
-		return Response::json(array('success' => true));
+		return Response::json(task::find($id));
+		//return Response::json(array('success' => true));
 	}
+
 
 }

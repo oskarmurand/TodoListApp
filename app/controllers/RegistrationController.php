@@ -49,43 +49,6 @@ class RegistrationController extends \BaseController {
 		Auth::login($user);
 
 		return Redirect::intended('/');
-
-		//====================================================//
-
-    // process the form here
-
-    // create the validation rules ------------------------
-    /*$rules = array(
-        //'name'             => 'required',                        // just a normal required validation
-        'email'            => 'required|email|unique:users',     // required and must be unique in the users table
-        'password'         => 'required',
-        'password_confirm' => 'required|same:password'           // required and has to match the password field
-    );
-
-    // do the validation ----------------------------------
-    // validate against the inputs from our form
-    $validator = Validator::make(Input::all(), $rules);
-
-    // check if the validator failed -----------------------
-    if ($validator->fails()) {
-
-        // get the error messages from the validator
-        $messages = $validator->messages();
-
-        // redirect our user back to the form with the errors from the validator
-        return Redirect::to('register')
-            ->withErrors($validator);
-
-    } else {
-        // validation successful ---------------------------
-
-				$user = UserModel::create(Input::only('email', 'password'));
-
-				Auth::login($user);
-
-				return Redirect::intended('/');
-
-    }*/
 	}
 
 
