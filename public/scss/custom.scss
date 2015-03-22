@@ -6,35 +6,7 @@ $persian_green: #06B294;
 $color_cornflower_blue_approx: #69f;
 $black_haze: #F7F7F7;
 $gallery: #EDEDED;
-
-// Body
-body {
-  background-color: $mercury;
-}
-
-p {
-  margin:0;
-}
-
-
-// Form Elements
-form {
-  img
-  {
-    display: block;
-    margin: 15px auto;
-    /* The critical part is the display: block and the margin auto on the left and right of the element */
-  }
-}
-
-input {
-
- &:focus {
-  border: solid 1px $persian_green;
-  }
-}
-
-// Fontawesome input fields
+$red: #FF1F17;
 
 //fonts
 $font_0: fontAwesome;
@@ -43,6 +15,84 @@ $font_0: fontAwesome;
 $envelope: '\f003';
 $padlock: '\f023';
 $plus: '\f067';
+$user: '\f007';
+
+* {
+	box-sizing: border-box;
+}
+
+
+// Body
+body {
+  background-color: $mercury;
+	p { margin:0; }
+	form {
+	  img
+	  {
+	    display: block;
+	    margin: 15px auto;
+	    /* Fixes an issue with image */
+	  }
+	}
+
+	input {
+	 &:focus {
+	  border: solid 1px $persian_green;
+	  }
+	}
+}
+
+
+
+// Task elements
+.task {
+  display: flex;   /* equal height of the children */
+  justify-content: center;
+//  padding:0;
+}
+
+.panel {
+  border: 1px solid $white;
+  padding: 0.5rem;
+  margin-bottom:0.5rem;
+  margin-top:0;
+  align-items: center;
+}
+
+// Container for home page
+.container-card {
+  background-color: $white;
+  padding: 2em;
+  margin-top: 3em;
+  border-radius: 3px;
+
+  input:not([type=submit]) {
+  &:hover{
+    background-color: $white;
+    border-color: $gallery;
+    }
+  }
+}
+
+.reveal-modal {
+  .row {
+     padding-top: 2em;
+  }
+}
+
+.ng-invalid     {
+  border-color: $red;
+}
+
+.name {
+  img {
+    margin-left:1em;
+    margin-top:5px;
+    height:35px;
+  }
+}
+
+// Fontawesome input fields
 
 // Email icon
 .email-input::-webkit-input-placeholder::before {
@@ -66,78 +116,68 @@ $plus: '\f067';
   	color: $persian_green;
   }
 
-  // Pass icon
-  .pass-input::-webkit-input-placeholder::before {
-    	font-family: $font_0;
-    	content: $padlock;
-    	color: $persian_green;
-    }
-  .pass-input::-moz-placeholder::before {
-    	font-family: $font_0;
-    	content: $padlock;
-    	color: $persian_green;
-    }
-  .pass-input:-ms-input-placeholder::before {
-    	font-family: $font_0;
-    	content: $padlock;
-    	color: $persian_green;
-    }
-  .pass-input:-moz-placeholder::before {
-    	font-family: $font_0;
-    	content: $padlock;
-    	color: $persian_green;
-    }
-
-
-
-
-// Task elements
-.task {
-  display: flex;   /* equal height of the children */
-  justify-content: center;
-//  padding:0;
-}
-
-
-// Container for home page
-.container-card {
-  background-color: $white;
-  padding: 2em;
-  margin-top: 3em;
-
-  input:not([type=submit]) {
-  &:hover{
-    background-color: $white;
-    border-color: $gallery;
-    }
+// Pass icon
+.pass-input::-webkit-input-placeholder::before {
+  	font-family: $font_0;
+  	content: $padlock;
+  	color: $persian_green;
   }
-}
-
-// Registration
-/*.container-card-reg {
-  background-color: $white;
-  padding: 2em;
-  margin-top: 3em;
-
-  input:not([type=submit]) {
-    background-color: $black_haze;
-    border-color: $black_haze;
-    box-shadow:0;
-  &:focus{
-    border: 1px solid $persian_green;
-    }
+.pass-input::-moz-placeholder::before {
+  	font-family: $font_0;
+  	content: $padlock;
+  	color: $persian_green;
   }
-}*/
+.pass-input:-ms-input-placeholder::before {
+  	font-family: $font_0;
+  	content: $padlock;
+  	color: $persian_green;
+  }
+.pass-input:-moz-placeholder::before {
+  	font-family: $font_0;
+  	content: $padlock;
+  	color: $persian_green;
+  }
 
-.panel {
-  border: 1px solid $white;
-  padding: 0.5rem;
-  margin-bottom:0.5rem;
-  margin-top:0;
-  align-items: center;
-}
+// Firstname icon
+.firstname-input::-webkit-input-placeholder::before {
+  	font-family: $font_0;
+  	content: $user;
+  	color: $persian_green;
+  }
+.firstname-input::-moz-placeholder::before {
+  	font-family: $font_0;
+  	content: $user;
+  	color: $persian_green;
+  }
+.firstname-input:-ms-input-placeholder::before {
+  	font-family: $font_0;
+  	content: $user;
+  	color: $persian_green;
+  }
+.firstname-input:-moz-placeholder::before {
+  	font-family: $font_0;
+  	content: $user;
+  	color: $persian_green;
+  }
 
-// Adding radius to accordion
-.taskcordion {
-   border-radius: 3px;
-}
+// Lastname icon
+.lastname-input::-webkit-input-placeholder::before {
+  	font-family: $font_0;
+  	content: $user;
+  	color: $persian_green;
+  }
+.lastname-input::-moz-placeholder::before {
+  	font-family: $font_0;
+  	content: $user;
+  	color: $persian_green;
+  }
+.lastname-input:-ms-input-placeholder::before {
+  	font-family: $font_0;
+  	content: $user;
+  	color: $persian_green;
+  }
+.lastname-input:-moz-placeholder::before {
+  	font-family: $font_0;
+  	content: $user;
+  	color: $persian_green;
+  }

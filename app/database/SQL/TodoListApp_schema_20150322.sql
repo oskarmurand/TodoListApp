@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.5.38)
 # Database: TodoListApp
-# Generation Time: 2015-03-16 15:49:56 +0000
+# Generation Time: 2015-03-22 13:31:30 +0000
 # ************************************************************
 
 
@@ -23,9 +23,12 @@
 # Dump of table tasks
 # ------------------------------------------------------------
 
+DROP TABLE IF EXISTS `tasks`;
+
 CREATE TABLE `tasks` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `task` varchar(140) NOT NULL DEFAULT '',
+  `description` mediumtext,
   `isArchived` tinyint(1) DEFAULT NULL,
   `isDone` tinyint(1) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -38,10 +41,12 @@ CREATE TABLE `tasks` (
 # Dump of table users
 # ------------------------------------------------------------
 
+DROP TABLE IF EXISTS `users`;
+
 CREATE TABLE `users` (
   `id` mediumint(11) unsigned NOT NULL AUTO_INCREMENT,
   `givenname` varchar(50) DEFAULT 'User',
-  `surname` varchar(50) DEFAULT NULL,
+  `lastname` varchar(50) DEFAULT NULL,
   `email` varchar(50) NOT NULL DEFAULT '',
   `password` varchar(60) NOT NULL DEFAULT '',
   `password_temp` varchar(100) DEFAULT NULL,
@@ -49,7 +54,7 @@ CREATE TABLE `users` (
   `isActive` tinyint(1) DEFAULT '1',
   `isDel` tinyint(1) DEFAULT NULL,
   `last_login` timestamp NULL DEFAULT NULL,
-  `remember_token` varchar(100) DEFAULT NULL,
+  `remember_token` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
