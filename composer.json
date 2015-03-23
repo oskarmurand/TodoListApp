@@ -15,7 +15,6 @@
 			"app/database/seeds",
 			"app/tests/TestCase.php"
 		]
-		}
 	},
 	"scripts": {
 		"post-install-cmd": [
