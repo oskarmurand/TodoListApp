@@ -21,6 +21,8 @@ TodoListApplication
 ## Installation
 
 * Place TodoListApp on your PHP server
-* Run *app/database/SQL/TodoListApp_schema_20150322.sql* on your MySQL server
 * Configure *app/config/database.php* -> MySQL array to match your MySQL server/user
-* Navigate to *yourserver/public* to use the application
+* IF you already have a database with a migrations table:
+    * Run *php artisan migrate:refresh --seed*
+  * Else
+    * Run *php artisan migrate --seed*
