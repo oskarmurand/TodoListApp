@@ -59,7 +59,7 @@ class SessionsController extends \BaseController {
 	public function destroy()
 	{
 		Auth::logout();
-		return Redirect::intended('login')->with('flash_message', 'You have been logged out!')->with('flash_message_color', 'secondary');
+		return Redirect::intended('login');
 	}
 
 

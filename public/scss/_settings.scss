@@ -131,6 +131,8 @@ $primary-color: $caribbean_green;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
+$success-color: $caribbean_green;
+
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
 
@@ -368,6 +370,7 @@ $accordion-navigation-font-size: rem-calc(14);
 // $alert-border-width: 1px;
 // $alert-border-color: scale-color($primary-color, $lightness: $alert-function-factor);
 // $alert-bottom-margin: rem-calc(20);
+$alert-bottom-margin: 0;
 
 // We use these to style the close buttons
 // $alert-close-color: $oil;
@@ -989,6 +992,7 @@ $select-hover-bg-color: $white;
 
 // We use these to control the background and border styles
 // $panel-bg: scale-color($white, $lightness: -5%);
+$panel-bg: $black_haze;
 // $panel-border-style: solid;
 // $panel-border-size: 1px;
 

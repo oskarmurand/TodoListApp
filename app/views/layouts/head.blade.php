@@ -15,10 +15,10 @@
   <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>-->
   <script src="bower_components/modernizr/modernizr.js"></script>
   <script src="bower_components/foundation/js/foundation/foundation.js"></script>
-  <script src="bower_components/foundation/js/foundation/foundation.accordion.js"></script>
   <script src="bower_components/foundation/js/foundation/foundation.reveal.js"></script>
   <script src="bower_components/foundation/js/foundation/foundation.alert.js"></script>
   <script src="bower_components/foundation/js/foundation/foundation.topbar.js"></script>
+  <script src="bower_components/foundation/js/foundation/foundation.equalizer.js"></script>
 
 
 
@@ -27,4 +27,4 @@
     <script src="js/controllers/mainCtrl.js"></script> <!-- load our controller -->
     <script src="js/services/taskservice.js"></script> <!-- load our service -->
     <script src="js/app.js"></script> <!-- load our application -->
-</head
+</head>

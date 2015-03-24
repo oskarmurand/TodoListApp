@@ -1,182 +1,341 @@
 @charset "UTF-8";
-/* line 20, ../scss/custom.scss */
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@font-face {
+  font-family: 'dripicons';
+  src: url("dripicons.eot");
+  src: url("dripicons.eot?#iefix") format("embedded-opentype"), url("dripicons.ttf") format("truetype"), url("dripicons.svg#dripicons") format("svg"), url("dripicons.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 51, ../scss/custom.scss */
 * {
-  box-sizing: border-box;
+  margin: 0;
 }
 
-/* line 26, ../scss/custom.scss */
+/* line 58, ../scss/custom.scss */
 body {
-  background-color: #E5E5E5;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
 }
-/* line 28, ../scss/custom.scss */
+/* line 69, ../scss/custom.scss */
+body #wrapper {
+  margin: 0 0 100px;
+  /* bottom = footer height */
+}
+/* line 72, ../scss/custom.scss */
 body p {
   margin: 0;
 }
-/* line 30, ../scss/custom.scss */
+/* line 74, ../scss/custom.scss */
 body form img {
   display: block;
   margin: 15px auto;
   /* Fixes an issue with image */
 }
-/* line 39, ../scss/custom.scss */
+/* line 83, ../scss/custom.scss */
 body input:focus {
   border: solid 1px #06B294;
 }
 
-/* line 48, ../scss/custom.scss */
+/* line 89, ../scss/custom.scss */
+body:after {
+  content: '';
+  display: block;
+  height: 100px;
+}
+
+/* line 94, ../scss/custom.scss */
 .task {
   display: flex;
   /* equal height of the children */
   justify-content: center;
 }
 
-/* line 54, ../scss/custom.scss */
+/* line 103, ../scss/custom.scss */
 .panel {
   border: 1px solid #FFF;
-  padding: 0.5rem;
+  padding: 1rem;
   margin-bottom: 0.5rem;
   margin-top: 0;
   align-items: center;
 }
+/* line 110, ../scss/custom.scss */
+.panel.rounded-left {
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+/* line 113, ../scss/custom.scss */
+.panel.rounded-right {
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
 
-/* line 63, ../scss/custom.scss */
+/* line 120, ../scss/custom.scss */
+.index {
+  margin-bottom: -4em;
+  min-height: 100%;
+  height: auto !important;
+  /* This line and the next line are not necessary unless you need IE6 support */
+  height: 100%;
+}
+
+/* line 127, ../scss/custom.scss */
+.container-card.index {
+  margin-top: 4em;
+  height: 100%;
+}
+
+/* line 133, ../scss/custom.scss */
 .container-card {
   background-color: #FFF;
   padding: 2em;
-  margin-top: 3em;
   border-radius: 3px;
+  margin-bottom: 3em;
 }
-/* line 70, ../scss/custom.scss */
+/* line 141, ../scss/custom.scss */
 .container-card input:not([type=submit]):hover {
   background-color: #FFF;
   border-color: #EDEDED;
 }
 
-/* line 78, ../scss/custom.scss */
+/* line 149, ../scss/custom.scss */
 .reveal-modal .row {
   padding-top: 2em;
 }
 
-/* line 83, ../scss/custom.scss */
+/* line 154, ../scss/custom.scss */
 .ng-invalid {
   border-color: #FF1F17;
 }
 
-/* line 88, ../scss/custom.scss */
+/* line 159, ../scss/custom.scss */
 .name img {
   margin-left: 1em;
   margin-top: 5px;
   height: 35px;
 }
 
-/* line 98, ../scss/custom.scss */
+/*	.login {
+		article {
+			 position: absolute; bottom: 0;
+			margin:auto;
+		}
+	}*/
+/* line 173, ../scss/custom.scss */
+.fullWidth {
+  width: 100%;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: initial;
+  /*	display : inline-flex;
+  	//flex-flow:row wrap;
+  	align-items: flex-end;
+  	justify-content: center;*/
+  background: white;
+}
+/* line 184, ../scss/custom.scss */
+.fullWidth .register {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 186, ../scss/custom.scss */
+.fullWidth .register img {
+  display: block;
+  margin: 15px auto;
+}
+/* line 190, ../scss/custom.scss */
+.fullWidth .register .regbutton {
+  padding-top: 1.5em;
+}
+/* line 193, ../scss/custom.scss */
+.fullWidth .register .deadspace {
+  padding-top: 10em;
+}
+/* line 196, ../scss/custom.scss */
+.fullWidth .login {
+  background: #EDEDED;
+  padding: 0 2em 0 2em;
+  /*	display:flex;
+  	align-items: center;
+  	justify-content: center;*/
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 199, ../scss/custom.scss */
+.fullWidth .login .deadspace {
+  padding-top: 12.4em;
+}
+/* line 206, ../scss/custom.scss */
+.fullWidth .login .loginprompt img {
+  display: block;
+  margin: 15px auto;
+}
+/* line 210, ../scss/custom.scss */
+.fullWidth .login .loginprompt p {
+  padding-bottom: 1em;
+}
+
+/* line 217, ../scss/custom.scss */
+.loginform {
+  margin-top: 10vh;
+}
+/* line 220, ../scss/custom.scss */
+.loginform .register-link a {
+  padding-right: 1em;
+}
+
+/* line 226, ../scss/custom.scss */
+.taskid {
+  line-height: 0em;
+  text-align: center;
+  padding-left: 35%;
+}
+
+/* line 232, ../scss/custom.scss */
+.addtaskbut {
+  margin-top: 2em;
+}
+
+/* line 236, ../scss/custom.scss */
+footer {
+  background: #FFF;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+/* line 242, ../scss/custom.scss */
+footer img {
+  margin-left: 1em;
+  margin-top: 5px;
+  height: 35px;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  z-index: -1;
+}
+
+/* line 259, ../scss/custom.scss */
 .email-input::-webkit-input-placeholder::before {
   font-family: fontAwesome;
   content: "";
   color: #06B294;
 }
 
-/* line 103, ../scss/custom.scss */
+/* line 264, ../scss/custom.scss */
 .email-input::-moz-placeholder::before {
   font-family: fontAwesome;
   content: "";
   color: #06B294;
 }
 
-/* line 108, ../scss/custom.scss */
+/* line 269, ../scss/custom.scss */
 .email-input:-ms-input-placeholder::before {
   font-family: fontAwesome;
   content: "";
   color: #06B294;
 }
 
-/* line 113, ../scss/custom.scss */
+/* line 274, ../scss/custom.scss */
 .email-input:-moz-placeholder::before {
   font-family: fontAwesome;
   content: "";
   color: #06B294;
 }
 
-/* line 120, ../scss/custom.scss */
+/* line 281, ../scss/custom.scss */
 .pass-input::-webkit-input-placeholder::before {
   font-family: fontAwesome;
   content: "";
   color: #06B294;
 }
 
-/* line 125, ../scss/custom.scss */
+/* line 286, ../scss/custom.scss */
 .pass-input::-moz-placeholder::before {
   font-family: fontAwesome;
   content: "";
   color: #06B294;
 }
 
-/* line 130, ../scss/custom.scss */
+/* line 291, ../scss/custom.scss */
 .pass-input:-ms-input-placeholder::before {
   font-family: fontAwesome;
   content: "";
   color: #06B294;
 }
 
-/* line 135, ../scss/custom.scss */
+/* line 296, ../scss/custom.scss */
 .pass-input:-moz-placeholder::before {
   font-family: fontAwesome;
   content: "";
   color: #06B294;
 }
 
-/* line 142, ../scss/custom.scss */
+/* line 303, ../scss/custom.scss */
 .firstname-input::-webkit-input-placeholder::before {
-  font-family: fontAwesome;
-  content: "";
+  font-family: dripicons;
+  content: "";
   color: #06B294;
 }
 
-/* line 147, ../scss/custom.scss */
+/* line 308, ../scss/custom.scss */
 .firstname-input::-moz-placeholder::before {
-  font-family: fontAwesome;
-  content: "";
+  font-family: dripicons;
+  content: "";
   color: #06B294;
 }
 
-/* line 152, ../scss/custom.scss */
+/* line 313, ../scss/custom.scss */
 .firstname-input:-ms-input-placeholder::before {
-  font-family: fontAwesome;
-  content: "";
+  font-family: dripicons;
+  content: "";
   color: #06B294;
 }
 
-/* line 157, ../scss/custom.scss */
+/* line 318, ../scss/custom.scss */
 .firstname-input:-moz-placeholder::before {
-  font-family: fontAwesome;
-  content: "";
+  font-family: dripicons;
+  content: "";
   color: #06B294;
 }
 
-/* line 164, ../scss/custom.scss */
+/* line 325, ../scss/custom.scss */
 .lastname-input::-webkit-input-placeholder::before {
-  font-family: fontAwesome;
-  content: "";
+  font-family: dripicons;
+  content: "";
   color: #06B294;
 }
 
-/* line 169, ../scss/custom.scss */
+/* line 330, ../scss/custom.scss */
 .lastname-input::-moz-placeholder::before {
-  font-family: fontAwesome;
-  content: "";
+  font-family: dripicons;
+  content: "";
   color: #06B294;
 }
 
-/* line 174, ../scss/custom.scss */
+/* line 335, ../scss/custom.scss */
 .lastname-input:-ms-input-placeholder::before {
-  font-family: fontAwesome;
-  content: "";
+  font-family: dripicons;
+  content: "";
   color: #06B294;
 }
 
-/* line 179, ../scss/custom.scss */
+/* line 340, ../scss/custom.scss */
 .lastname-input:-moz-placeholder::before {
-  font-family: fontAwesome;
-  content: "";
+  font-family: dripicons;
+  content: "";
   color: #06B294;
 }
