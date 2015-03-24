@@ -4,26 +4,20 @@
     @include('layouts.head')
 <!-- declare our angular app and controller -->
 <body class="container" ng-app="taskApp" ng-controller="mainController">
-
-
-	<!-- Temporary Navigation -->
+  <div id="wrapper">
+  @if (Auth::guest())
+  <!-- Display nothing -->
+  @else
+	<!-- Logged in Navigation -->
   @include('layouts.navigation')
+  @endif
 
-  <!-- Alerts -->
-  <div class="">
-    @if (Session::get('flash_message'))
-    <div data-alert class="alert-box  {{ Session::get('flash_message_color') }}">
-    <div class="alert" role="alert">
-    <span class="fa fa-circle" aria-hidden="true"></span>
-    <span class="sr-only">Alert:</span>
-        {{ Session::get('flash_message') }}
-        <a href="#" class="close">&times;</a>
-      </div>
-    </div>
-      @endif
 
   <!-- Content -->
   @yield('content')
+</div>
+
+
 </body>
   <script>
   $(document).foundation();
@@ -31,5 +25,8 @@
   $("button.close").click(function(){
     $('.close.button.radius.small-12').foundation('reveal', 'close');
   });
+
   </script>
+
+
 </html>

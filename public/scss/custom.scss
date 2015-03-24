@@ -1,7 +1,36 @@
+@import "compass/css3";
+
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+$dripicons-fonts-path: '' !default;
+
+
+@font-face {
+    font-family: 'dripicons';
+    src:url('#{$dripicons-fonts-path}dripicons.eot');
+    src:url('#{$dripicons-fonts-path}dripicons.eot?#iefix') format('embedded-opentype'),
+        url('#{$dripicons-fonts-path}dripicons.ttf') format('truetype'),
+        url('#{$dripicons-fonts-path}dripicons.svg#dripicons') format('svg'),
+        url('#{$dripicons-fonts-path}dripicons.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
 // Colors
 $white: #FFF;
 $black: #000;
-$mercury: #E5E5E5;
+$mercury: #f7f7f7;
 $persian_green: #06B294;
 $color_cornflower_blue_approx: #69f;
 $black_haze: #F7F7F7;
@@ -10,21 +39,36 @@ $red: #FF1F17;
 
 //fonts
 $font_0: fontAwesome;
+$font_1: dripicons;
+
 
 // FontAwesome elements
 $envelope: '\f003';
 $padlock: '\f023';
 $plus: '\f067';
-$user: '\f007';
+$user: '\e084';
 
 * {
-	box-sizing: border-box;
+	//box-sizing: border-box;
+	margin: 0
 }
 
 
 // Body
 body {
+
   background-color: $mercury;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	padding:0;
+	margin:0;
+	position:relative;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	#wrapper {
+		margin: 0 0 100px; /* bottom = footer height */
+	}
 	p { margin:0; }
 	form {
 	  img
@@ -42,6 +86,8 @@ body {
 	}
 }
 
+body:after{ content:''; display:block; height:100px; }
+
 
 
 // Task elements
@@ -50,21 +96,46 @@ body {
   justify-content: center;
 //  padding:0;
 }
+.container {
+
+}
 
 .panel {
   border: 1px solid $white;
-  padding: 0.5rem;
+  padding: 1rem;
   margin-bottom:0.5rem;
   margin-top:0;
   align-items: center;
+
+	&.rounded-left {
+		border-bottom-left-radius: 5px;
+		border-top-left-radius: 5px;
+	} &.rounded-right {
+		border-bottom-right-radius: 5px;
+		border-top-right-radius: 5px;
+	}
+
 }
 
+.index {
+	margin-bottom:-4em;
+	min-height: 100%;
+		height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+		height: 100%;;
+}
+
+.container-card.index {
+	margin-top:4em;
+	height:100%;
+
+}
 // Container for home page
 .container-card {
   background-color: $white;
   padding: 2em;
-  margin-top: 3em;
+  //margin-top: 3em;
   border-radius: 3px;
+	margin-bottom:3em;
 
   input:not([type=submit]) {
   &:hover{
@@ -91,6 +162,96 @@ body {
     height:35px;
   }
 }
+
+/*	.login {
+		article {
+			 position: absolute; bottom: 0;
+			margin:auto;
+		}
+	}*/
+
+	.fullWidth {
+	width: 100%;
+	height: 100vh;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: initial;
+/*	display : inline-flex;
+	//flex-flow:row wrap;
+	align-items: flex-end;
+	justify-content: center;*/
+	background:white;
+	.register {
+		@include vertical-align;
+		img {
+		display: block;
+		margin: 15px auto;
+	}
+	.regbutton {
+		padding-top:1.5em;
+	}
+		.deadspace {
+		padding-top:10em;}
+	}
+	.login {
+		background:$gallery;
+		padding: 0 2em 0 2em;
+		.deadspace {
+		padding-top:12.4em;}
+	/*	display:flex;
+		align-items: center;
+		justify-content: center;*/
+		@include vertical-align;
+		.loginprompt {
+				img {
+				display: block;
+				margin: 15px auto;
+			}
+				p {
+					padding-bottom: 1em;
+				}
+		}
+	}
+}
+
+.loginform {
+	margin-top:10vh;
+	.register-link {
+		a {
+		padding-right:1em;
+		}
+	}
+}
+
+.taskid {
+	line-height:0em;
+	text-align: center;
+	padding-left:35%;
+}
+
+.addtaskbut {
+	margin-top: 2em;
+}
+
+footer{
+  background:$white;
+  position:fixed;
+  bottom:0;
+  width:100%;
+  height:50px;
+	img {
+    margin-left:1em;
+    margin-top:5px;
+    height:35px;
+		opacity:0.2;
+  	filter:alpha(opacity=20);
+  	z-index:-1;
+  }
+}
+
+
+
+
 
 // Fontawesome input fields
 
@@ -140,44 +301,44 @@ body {
 
 // Firstname icon
 .firstname-input::-webkit-input-placeholder::before {
-  	font-family: $font_0;
+  	font-family: $font_1;
   	content: $user;
   	color: $persian_green;
   }
 .firstname-input::-moz-placeholder::before {
-  	font-family: $font_0;
-  	content: $user;
+  	font-family: $font_1;
+  	content:$user;
   	color: $persian_green;
   }
 .firstname-input:-ms-input-placeholder::before {
-  	font-family: $font_0;
+  	font-family: $font_1;
   	content: $user;
   	color: $persian_green;
   }
 .firstname-input:-moz-placeholder::before {
-  	font-family: $font_0;
+  	font-family: $font_1;
   	content: $user;
   	color: $persian_green;
   }
 
 // Lastname icon
 .lastname-input::-webkit-input-placeholder::before {
-  	font-family: $font_0;
+  	font-family: $font_1;
   	content: $user;
   	color: $persian_green;
   }
 .lastname-input::-moz-placeholder::before {
-  	font-family: $font_0;
+  	font-family: $font_1;
   	content: $user;
   	color: $persian_green;
   }
 .lastname-input:-ms-input-placeholder::before {
-  	font-family: $font_0;
+  	font-family: $font_1;
   	content: $user;
   	color: $persian_green;
   }
 .lastname-input:-moz-placeholder::before {
-  	font-family: $font_0;
+  	font-family: $font_1;
   	content: $user;
   	color: $persian_green;
   }

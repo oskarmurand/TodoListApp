@@ -16,9 +16,8 @@ input[type='checkbox'] {
 	width: 0;
 	+ label {
 		position: relative;
+    margin-left:1em;
 		display: flex;
-		margin: .5em auto .5em 45%;
-		align-items: center;
 		color: $color_star_dust_approx;
 		transition: color 250ms cubic-bezier(.4,.0,.23,1);
 		> {
@@ -27,8 +26,8 @@ input[type='checkbox'] {
 				justify-content: center;
 				align-items: center;
 				margin-right: 1em;
-				min-width: 1em ;
-				min-height: 1em;
+				min-width: 1.5em ;
+				min-height: 1.5em;
 				background: $mercury;
 				border: 2px solid $mercury;
 				border-radius: 2px;
@@ -41,29 +40,28 @@ input[type='checkbox'] {
         font-family:'FontAwesome';
         color:$mercury;
 				content: "\f00c";
-				background: $color_star_dust_approx;
-				border: 2px solid $color_star_dust_approx;
+				background: $white;
+				border: 2px solid $mercury;
 			}
 		}
 	}
 	&:focus + label {
 		> span {
-			background: $color_star_dust_approx;
-			border: 2px solid $color_star_dust_approx;
+			background: $white;
+			border: 2px solid $mercury;
 		}
 	}
 	&:checked + label > {
 		span {
       font-family:'FontAwesome';
-			border: .5em solid $mercury;
+			border: 0.7em solid $mercury;
 			&:before {
         color:$green;
 				content: "\f00c";
 				position: absolute;
-				top: -0.2em;
-				left: 0em;
-				border-right: 3px solid transparent;
-				border-bottom: 3px solid transparent;
+				top: 0.1em;
+				left: 0.2em;
+
 				transform-origin: 0 100%;
 			}
 		}
