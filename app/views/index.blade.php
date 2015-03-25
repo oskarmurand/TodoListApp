@@ -45,8 +45,8 @@
 				<p class="taskid text-center">@{{ task.id }}</p>
 			<!--	<a class="text-center" href=# data-reveal-id="editModal"><p class="text-center">1</p></a>-->
 			</div><!--end task-number (hides on phone screen) -->
-			<div class="panel small-10 medium-10 columns text-left center" data-equalizer-watch>
-				<p>@{{ task.task }}</p>
+			<div class="panel small-10 medium-10 columns text-left center task-title" data-equalizer-watch>
+				<p class="text-left small-10 columns" >@{{ task.task }}<p class="text-right edit-tasks small-2 columns small-pull" ><a class="text-center" href=# data-reveal-id="editModal">Edit Task</a></p></p>
 			</div> <!-- end task body -->
 			<div class="panel small-2 medium-1 columns text-center rounded-right" data-equalizer-watch>
 				<input ng-click="deletetask(task.id)" id='@{{ task.id }}' type='checkbox' /><label for='@{{ task.id }}'><span></span></label> <!-- end checkbox -->
@@ -59,7 +59,8 @@
 </div> <!-- end task add button -->
 
 	<div id="taskModal" class="reveal-modal medium" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-	  <h5 id="modalTitle" class="text-center">Add a new task</h5>
+	  <h5 id="modalTitle" class="text-center"><i class="fa fa-tasks"></i> Add a new task</h5>
+		<hr />
 		<div class="row">
 			<form name="tasksubmitform" ng-submit="submittask()" novalidate> <!-- ng-submit will disable the default form action and use our function -->
 				<div class="small-12 columns" ng-class="{ 'has-error' : tasksubmitform.task.$invalid && !tasksubmitform.task.$pristine }">
@@ -83,7 +84,8 @@
 
 	<!-- edit task / mostly for demo purposes -->
 	<div id="editModal" class="reveal-modal medium" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-	<h5 id="modalTitle" class="text-center">Edit task</h5>
+	<h5 id="modalTitle" class="text-center"><i class="fa fa-tasks"></i> Edit task</h5>
+	<hr />
 	<div class="row">
 		<form name="taskupdateform" novalidate> <!-- ng-submit will disable the default form action and use our function -->
 			<div class="small-12 columns">
